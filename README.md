@@ -4,11 +4,13 @@
 
 Aquí tienes una demo de nuestra aplicación. [https://buscador-wikipedia-angular-13.vercel.app](https://buscador-wikipedia-angular-13.vercel.app)
 
+¿Quieres aprender a crear este buscador? Puedes ver un tutorial aquí [https://youtu.be/cPKbI4d0ruU](https://youtu.be/cPKbI4d0ruU)
+
 Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
 ## Server de desarrollo
 
-Ejecuta `ng serve` para el dev server. Puedes ver la aplicación en `http://localhost:4200/`.
+Ejecuta `ng serve` para el dev server. Puedes ver la aplicación en `http://localhost:4200/`
 
 ## Tecnologías
 
