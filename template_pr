@@ -1,0 +1,17 @@
+### :pushpin: References
+[WA - Retrieve FAQ URL](https://youtube.com/dominicode)
+
+### :tophat: What is the goal?
+
+_Provide a description of the overall goal (you can usually copy the one from the issue)_
+Create the services and resolver in order to get the FAQ URL
+### :memo: Notes
+
+_Provide a description of the implementation or some notes_
+
+### :boom: How can it be tested?
+
+_If it cannot be tested explain why. Add testing data._
+
+### :speech_balloon: Further comments
+_Anything
