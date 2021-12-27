@@ -1,1 +1,9 @@
-<p>article works!</p>
+<article class="article">
+    <a
+      [href]="'https://es.wikepedia.org/?curid=' + article.pageid"
+      target="_blank"
+    >
+      {{ article.title }}
+    </a>
+    <p [innerHTML]="article.snippet"></p>
+  </article>
