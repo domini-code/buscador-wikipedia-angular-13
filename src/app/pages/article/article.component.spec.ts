@@ -1,25 +1,43 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render, screen } from '@testing-library/angular';
+import { Article } from '../search/services/search.service';
 import { ArticleComponent } from './article.component';
 
 describe('ArticleComponent', () => {
-  let component: ArticleComponent;
-  let fixture: ComponentFixture<ArticleComponent>;
+  it('Should render article ', async () => {
+    const articleMock = {
+      title: 'Test title',
+      timestamp: new Date(),
+      snippet: 'Test snippet',
+      pageid: 1,
+    } as Article;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ArticleComponent ]
-    })
-    .compileComponents();
+    await render(ArticleComponent, {
+      componentProperties: {
+        article: articleMock,
+      },
+    });
+
+    await screen.getByText(articleMock.title);
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ArticleComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  it('Should container a link to wikipedia with pageid', async () => {
+    const linkWikipedia = 'https://es.wikepedia.org/?curid=';
+    const articleMock = {
+      title: 'Test title',
+      timestamp: new Date(),
+      snippet: 'Test snippet',
+      pageid: 1,
+    } as Article;
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    await render(ArticleComponent, {
+      componentProperties: {
+        article: articleMock,
+      },
+    });
+
+    const linkToDetail = await screen.findByText(articleMock.title);
+    expect(linkToDetail.getAttribute('href')).toEqual(
+      `${linkWikipedia}${articleMock.pageid}`
+    );
   });
 });
